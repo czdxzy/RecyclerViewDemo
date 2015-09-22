@@ -33,24 +33,30 @@ public class MyWeatherDB {
     public void saveProvince(Province province){
         if (province != null){
             ContentValues values = new ContentValues();
-            values.put("province_name",province.getProvinceName());
-            values.put("province_code",province.getProvinceCode());
+            values.put("id",province.getId());
+            values.put("name",province.getName());
+            values.put("pro_sort",province.getProSort());
+            values.put("pro_remark",province.getProRemark());
             db.insert("Province",null,values);
         }
     }
     public void saveCity(City city){
         if (city != null){
             ContentValues values = new ContentValues();
-            values.put("city_name",city.getCityName());
-            values.put("city_code",city.getCityCode());
+            values.put("id",city.getId());
+            values.put("name",city.getName());
+            values.put("pro_id",city.getProId());
+            values.put("city_sort",city.getCitySort());
             db.insert("City",null,values);
         }
     }
     public void saveCounty(County county){
         if (county != null){
             ContentValues values = new ContentValues();
-            values.put("county_name",county.getCountyName());
-            values.put("county_code",county.getCountyCode());
+            values.put("id",county.getId());
+            values.put("dis_name",county.getDisName());
+            values.put("city_id",county.getCityId());
+            values.put("dis_sort",county.getDisSort());
             db.insert("County",null,values);
         }
     }
@@ -60,9 +66,10 @@ public class MyWeatherDB {
         if (cursor.moveToFirst()){
             do {
                 Province province = new Province();
-                province.setProvinceId(cursor.getInt(cursor.getColumnIndex("id")));
-                province.setProvinceName(cursor.getString(cursor.getColumnIndex("province_name")));
-                province.setProvinceCode(cursor.getString(cursor.getColumnIndex("province_code")));
+                province.setId(cursor.getInt(cursor.getColumnIndex("id")));
+                province.setName(cursor.getString(cursor.getColumnIndex("name")));
+                province.setProSort(cursor.getInt(cursor.getColumnIndex("pro_sort")));
+                province.setProRemark(cursor.getString(cursor.getColumnIndex("pro_remark")));
                 provinceList.add(province);
             }while (cursor.moveToNext());
         }
@@ -74,9 +81,10 @@ public class MyWeatherDB {
         if (cursor.moveToFirst()){
             do {
                 City city = new City();
-                city.setCityId(cursor.getInt(cursor.getColumnIndex("id")));
-                city.setCityName(cursor.getString(cursor.getColumnIndex("city_name")));
-                city.setCityCode(cursor.getString(cursor.getColumnIndex("city_code")));
+                city.setId(cursor.getInt(cursor.getColumnIndex("id")));
+                city.setName(cursor.getString(cursor.getColumnIndex("name")));
+                city.setProId(cursor.getInt(cursor.getColumnIndex("pro_id")));
+                city.setCitySort(cursor.getInt(cursor.getColumnIndex("city_sort")));
                 cityList.add(city);
             }while (cursor.moveToNext());
         }
@@ -88,9 +96,10 @@ public class MyWeatherDB {
         if (cursor.moveToFirst()){
             do {
                 County county = new County();
-                county.setCountyId(cursor.getInt(cursor.getColumnIndex("id")));
-                county.setCountyName(cursor.getString(cursor.getColumnIndex("county_name")));
-                county.setCountyCode(cursor.getString(cursor.getColumnIndex("county_code")));
+                county.setId(cursor.getInt(cursor.getColumnIndex("id")));
+                county.setDisName(cursor.getString(cursor.getColumnIndex("dis_name")));
+                county.setCityId(cursor.getInt(cursor.getColumnIndex("city_id")));
+                county.setDisSort(cursor.getInt(cursor.getColumnIndex("dis_sort")));
                 countyList.add(county);
             }while (cursor.moveToNext());
         }

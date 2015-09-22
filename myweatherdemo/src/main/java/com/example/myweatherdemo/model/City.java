@@ -4,31 +4,46 @@ package com.example.myweatherdemo.model;
  * Created by Administrator on 2015/9/17.
  */
 public class City {
-    private int cityId;
-    private String cityName;
-    private String cityCode;
+    private int Id;
+    private String name;
+    private int ProId;
+    private int CitySort;
 
-    public int getCityId() {
-        return cityId;
+    public int getId(){
+        return Id;
     }
 
-    public void setCityId(int cityId) {
-        this.cityId = cityId;
+    public void setId(int id) {
+        this.Id = id;
     }
 
-    public String getCityName() {
-        return cityName;
+    public String getName() {
+        return name;
     }
 
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getCityCode() {
-        return cityCode;
+    public int getProId() {
+        return ProId;
     }
 
-    public void setCityCode(String cityCode) {
-        this.cityCode = cityCode;
+    public void setProId(int proId) {
+        this.ProId = proId;
+    }
+
+    public int getCitySort() {
+        return CitySort;
+    }
+
+    public void setCitySort(int citySort) {
+        this.CitySort = citySort;
+    }
+    public String subName(){
+        if (name.substring(name.length()-1,name.length()).equals("市"))
+            return name.substring(0,name.length()-1);
+        else
+            return name;
     }
 }

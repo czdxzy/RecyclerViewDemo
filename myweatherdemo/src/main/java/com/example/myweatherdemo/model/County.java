@@ -4,31 +4,48 @@ package com.example.myweatherdemo.model;
  * Created by Administrator on 2015/9/17.
  */
 public class County {
-    private int countyId;
-    private String countyName;
-    private String countyCode;
+    private int Id;
+    private String DisName;
+    private int CityId;
+    private int DisSort;
 
-    public int getCountyId() {
-        return countyId;
+    public int getId() {
+        return Id;
     }
 
-    public void setCountyId(int countyId) {
-        this.countyId = countyId;
+    public void setId(int id) {
+        this.Id = id;
     }
 
-    public String getCountyCode() {
-        return countyCode;
+    public String getDisName() {
+        return DisName;
     }
 
-    public void setCountyCode(String countyCode) {
-        this.countyCode = countyCode;
+    public void setDisName(String disName) {
+        this.DisName = disName;
     }
 
-    public String getCountyName() {
-        return countyName;
+    public int getCityId() {
+        return CityId;
     }
 
-    public void setCountyName(String countyName) {
-        this.countyName = countyName;
+    public void setCityId(int cityId) {
+        this.CityId = cityId;
+    }
+
+    public int getDisSort() {
+        return DisSort;
+    }
+
+    public void setDisSort(int disSort) {
+        this.DisSort = disSort;
+    }
+    public String subName(){
+        if (DisName.substring(DisName.length()-1,DisName.length()).equals("市"))
+            return DisName.substring(0,DisName.length()-1);
+        else if (DisName.substring(DisName.length()-1,DisName.length()).equals("县"))
+            return DisName.substring(0,DisName.length()-1);
+        else
+            return DisName;
     }
 }

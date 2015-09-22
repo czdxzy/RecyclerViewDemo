@@ -9,17 +9,20 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class MyWeatherOpenHelper extends SQLiteOpenHelper{
     public static final String CREATE_PROVINCE = "create table Province ("+
-            "id integer primary key autoincrement, "+
-            "province_name text, "+
-            "province_code text)";
+            "id integer primary key, "+
+            "name text, "+
+            "pro_sort integer, "+
+            "pro_remark text)";
     public static final String CREATE_CITY = "create table City ("+
-            "id integer primary key autoincrement, "+
-            "city_name text, "+
-            "city_code text)";
+            "id integer primary key, "+
+            "name text, "+
+            "pro_id integer, "+
+            "city_sort integer)";
     public static final String CREATE_COUNTY = "create table County ("+
-            "id integer primary key autoincrement, "+
-            "county_name text, "+
-            "county_code text)";
+            "id integer primary key, "+
+            "dis_name text, "+
+            "city_id integer, "+
+            "dis_sort integer)";
     public MyWeatherOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
