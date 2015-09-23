@@ -60,21 +60,21 @@ public class MyWeatherDB {
             db.insert("County",null,values);
         }
     }
-    public List<Province> loadProvince(){
-        List<Province> provinceList = new ArrayList<>();
-        Cursor cursor = db.query("Province",null,null,null,null,null,null);
-        if (cursor.moveToFirst()){
-            do {
-                Province province = new Province();
-                province.setId(cursor.getInt(cursor.getColumnIndex("id")));
-                province.setName(cursor.getString(cursor.getColumnIndex("name")));
-                province.setProSort(cursor.getInt(cursor.getColumnIndex("pro_sort")));
-                province.setProRemark(cursor.getString(cursor.getColumnIndex("pro_remark")));
-                provinceList.add(province);
-            }while (cursor.moveToNext());
-        }
-        return provinceList;
-    }
+//    public List<Province> loadProvince(){
+//        List<Province> provinceList = new ArrayList<>();
+//        Cursor cursor = db.query("Province",null,null,null,null,null,null);
+//        if (cursor.moveToFirst()){
+//            do {
+//                Province province = new Province();
+//                province.setId(cursor.getInt(cursor.getColumnIndex("id")));
+//                province.setName(cursor.getString(cursor.getColumnIndex("name")));
+//                province.setProSort(cursor.getInt(cursor.getColumnIndex("pro_sort")));
+//                province.setProRemark(cursor.getString(cursor.getColumnIndex("pro_remark")));
+//                provinceList.add(province);
+//            }while (cursor.moveToNext());
+//        }
+//        return provinceList;
+//    }
     public List<City> loadCity(){
         List<City> cityList = new ArrayList<>();
         Cursor cursor = db.query("City",null,null,null,null,null,null);

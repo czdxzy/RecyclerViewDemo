@@ -4,17 +4,17 @@ package com.example.myweatherdemo.model;
  * Created by Administrator on 2015/9/17.
  */
 public class City {
-    private int Id;
+    private int CityID;
     private String name;
-    private int ProId;
+    private int ProID;
     private int CitySort;
 
     public int getId(){
-        return Id;
+        return CityID;
     }
 
     public void setId(int id) {
-        this.Id = id;
+        this.CityID = id;
     }
 
     public String getName() {
@@ -26,11 +26,11 @@ public class City {
     }
 
     public int getProId() {
-        return ProId;
+        return ProID;
     }
 
     public void setProId(int proId) {
-        this.ProId = proId;
+        this.ProID = proId;
     }
 
     public int getCitySort() {
@@ -40,10 +40,5 @@ public class City {
     public void setCitySort(int citySort) {
         this.CitySort = citySort;
     }
-    public String subName(){
-        if (name.substring(name.length()-1,name.length()).equals("市"))
-            return name.substring(0,name.length()-1);
-        else
-            return name;
-    }
+
 }

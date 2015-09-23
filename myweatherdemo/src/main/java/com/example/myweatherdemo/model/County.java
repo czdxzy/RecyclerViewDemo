@@ -6,7 +6,7 @@ package com.example.myweatherdemo.model;
 public class County {
     private int Id;
     private String DisName;
-    private int CityId;
+    private int CityID;
     private int DisSort;
 
     public int getId() {
@@ -26,11 +26,11 @@ public class County {
     }
 
     public int getCityId() {
-        return CityId;
+        return CityID;
     }
 
     public void setCityId(int cityId) {
-        this.CityId = cityId;
+        this.CityID = cityId;
     }
 
     public int getDisSort() {

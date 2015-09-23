@@ -4,12 +4,12 @@ package com.example.myweatherdemo.model;
  * Created by Administrator on 2015/9/17.
  */
 public class Province {
-    private int Id;
+    private int ProID;
     private String name;
     private int ProSort;
     private String ProRemark;
     public int getId() {
-        return Id;
+        return ProID;
     }
 
     public String getProRemark() {
@@ -21,7 +21,7 @@ public class Province {
     }
 
     public void setId(int id) {
-        this.Id = id;
+        this.ProID = id;
     }
 
     public int getProSort() {
