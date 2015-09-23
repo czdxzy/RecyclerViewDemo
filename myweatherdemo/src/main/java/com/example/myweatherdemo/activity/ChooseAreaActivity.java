@@ -115,7 +115,6 @@ public class ChooseAreaActivity extends Activity{
                         @Override
                         public void onFinish(String response) {
                             String weather = Utils.weather(response);
-                            Log.d("MainActivity","--------------"+weather);
                             intent.putExtra("weather", weather);
                         }
 
